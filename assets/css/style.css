@@ -1,2 +1,21 @@
 /* My CSS stylesheet */
 
+.navbar-brand {
+    background-color: aquamarine;
+    padding: 10px;
+    border: 10px;
+
+}
+
+
+.card {
+    margin:5%;
+}
+
+/* Adding media queries to show the drop-down, and hide the navbar when the screen is smaller than 480 pixels */
+@media (max-width: 480px) {
+    .container-fluid {
+        background-color:aquamarine;
+    }
+}
+  
