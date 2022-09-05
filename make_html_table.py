@@ -1,22 +1,20 @@
-<!-- comparisons.html -->
-<!-- 
-    <p>
+import pandas as pd
 
-        <ul>
-            <li>Contains all of the visualizations on the same page so they can easily be compared with each other.</li>
-            <li>Uses a Bootstrap grid for the visualizations.</li>
-            <li>The grid must be two visualizations across medium and large screens, and it must be one visualization across on extra-small or small screens.</li>
-        </ul>
+csvpath = "Resources/cities.csv"
+table = pd.read_csv(csvpath, encoding="utf-8", sep=",")
 
-    </p> -->
+# print(table)
 
+html = table.to_html(index=False, classes="table")
+
+datahtml_above_table = '''
 
 <!DOCTYPE html>
 <html lang="en-us">
 
 <head>
   <meta charset="UTF-8">
-  <title>Comparisons</title>
+  <title>Data</title>
 
   <!-- Set the viewport the way Bootstrap likes it -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -67,39 +65,28 @@
 	  </div>
 	</nav>
 
-  <h3 class="card-title text-left">Comparison: Latitude vs. X</h3>
-  <hr>
-  <h5 class="card-subtitle text-left">Click any plot to get an in-depth analysis.</h5>
-  <br>
-  
+    <div class="table-responsive">
 
-  <div class="box box-single">
-      
-    <div class="row">
-      <div class="col-sm-12 col-md-6">        
-        <a href="/visualizations/viz1.html"><img src="/assets/images/fig_1.png" alt="..."></a>       
-      </div>
-      <div class="col-sm-12 col-md-6">
-        <a href="/visualizations/viz2.html"><img src="/assets/images/fig_2.png" alt="..."></a>
-      </div>     
-      
-      <div class="col-sm-12 col-md-6">        
-        <a href="/visualizations/viz3.html"><img src="/assets/images/fig_3.png" alt="..."></a>     
-      </div>   
-      <div class="col-sm-12 col-md-6">            
-        <a href="/visualizations/viz4.html"><img src="/assets/images/fig_4.png" alt="..."></a>
-      </div>   
 
-    </div>    
-    
 
-  </div>
+'''
 
- 
+datahtml_below_table = '''
 
-  <!-- Import the Bootstrap JavaScript code -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    </div>
+
+    <!-- Import the Bootstrap JavaScript code -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
 </body>
 
 </html>
+
+'''
+
+with open("data.html", "w", encoding="utf-8") as f:
+    f.write(datahtml_above_table)
+    f.write(html)
+    f.write(datahtml_below_table)
+
+
