@@ -1,9 +1,11 @@
 import pandas as pd
 
+# Make csv into a dataframe
+
 csvpath = "Resources/cities.csv"
 table = pd.read_csv(csvpath, encoding="utf-8", sep=",")
 
-# print(table)
+# Make dataframe into html table
 
 html = table.to_html(index=False, classes="table")
 
@@ -84,9 +86,9 @@ datahtml_below_table = '''
 
 '''
 
+# Write to data.html file with all code for html table
+
 with open("data.html", "w", encoding="utf-8") as f:
     f.write(datahtml_above_table)
     f.write(html)
     f.write(datahtml_below_table)
-
-
