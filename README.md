@@ -5,7 +5,7 @@
 **Files:**
 
 1. **index.html**           == responsive landing page with navbar, Summary card, Visualizations sidebar card
-2. **data.html**            == Bootstrap responsible html table for /Resources/cities.csv
+2. **data.html**            == Bootstrap responsive html table for /Resources/cities.csv
 3. **comparisons.html**     == all visualizations in responsive Bootstrap grid 
 4. **make_html_table.py**   == python script to render cities.csv as dataframe then html table 
 5. **visualizations/**      == contains 4 .html files for the 4 separate .png visualization files in /assets/images/
