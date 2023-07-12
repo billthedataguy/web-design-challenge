@@ -1,6 +1,6 @@
 # Web-Design-Challenge
 ## William Vann
-### HW#11 Web Visualization Dashboard
+### Web Visualization Dashboard
 
 **Files:**
 
